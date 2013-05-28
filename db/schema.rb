@@ -11,12 +11,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130524194505) do
+ActiveRecord::Schema.define(:version => 20130528182329) do
+
+  create_table "destroys", :force => true do |t|
+    t.string   "movie"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "movies", :force => true do |t|
     t.date     "showtime_date"
-    t.string   "showtime_time"
-    t.string   "time"
+    t.time     "showtime_time"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
   end

@@ -1,15 +1,15 @@
 class Movie < ActiveRecord::Base
-  attr_accessible :showtime_date, :showtime_time, :time
+  attr_accessible :showtime_date, :showtime_time
 
   def showtime
   	"#{formatted_date} (#{formatted_time})"
   end
 
   def formatted_date
-  	showtime_date.strftime("%B%D,%Y")
+  	showtime_date.strftime("%B %d, %Y")
   end
 
   def formatted_time
-  	formatted_time.strftime("%l:%M,%p").strip.downcase
+  	showtime_time.strftime("%l:%M%p").strip.downcase
   end
 end
